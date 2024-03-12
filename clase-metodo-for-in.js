@@ -35,3 +35,4 @@ const listaEscolar = {
 for (utiles in listaEscolar) {
     console.log(`${utiles} : ${listaEscolar[utiles]}`);
 }
+
