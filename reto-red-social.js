@@ -13,15 +13,15 @@ Requerimientos del reto:
 const userDatabase = [
     {
         username: 'andres',
-        password: 123
+        password: '123'
     },
     {
         username: 'caro',
-        password: 456
+        password: '456'
     },
     {
         username: 'mariana',
-        password: 789
+        password: '789'
     }
 ]
 
@@ -44,3 +44,31 @@ const userTimeLine = [
     }
 
 ]
+
+const username = prompt('Ingresa tu usuario')
+const password = prompt('Ingresa tu contraseña')
+
+function usuarioExistente(username, password) {
+    for(let i = 0; i < userDatabase.length; i++) {
+        if (
+            userDatabase[i].username === username &&
+            userDatabase[i].password === password
+         ) {
+            return true
+        }
+    }
+    return false
+}
+
+function signIn(username, password) {
+    if(usuarioExistente(username, password)) {
+        alert(`Bienvenido a tu cuenta ${username}`)
+        console.log(userTimeLine);
+    } else {
+        alert('Uuups, usuario o contraseña incorrectos')
+    }
+}
+
+signIn(username, password)
+
+
